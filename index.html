@@ -112,51 +112,121 @@
     .launch-btn i { font-size:2.2rem; width:40px; text-align:center; color:#ffd966; }
     .launch-btn span { font-size:1.2rem; font-weight:600; }
 
-    /* ---------- 强制移动端适配 (≤800px) ---------- */
-    @media screen and (max-width: 800px) {
-      body { padding:6px; }
-      .dashboard { grid-template-columns:1fr; gap:12px; }
-      .sidebar { order:-1; }
-      .glass-panel { border-radius: 24px; padding: 14px 12px; }
-      
-      /* 顶栏彻底垂直 */
-      .top-bar { flex-direction:column; align-items:stretch; gap:6px; border-radius: 32px; padding:10px 12px; }
-      .city-info-group, .source-selector { width:100%; justify-content:space-between; }
-      .search-wrapper { width:100%; }
-      .refresh-btn { align-self:flex-end; margin-top:-44px; } /* 浮动到右上角 */
-      
-      /* 今日卡片强制垂直 */
-      .today-card { flex-direction:column; align-items:stretch; gap:16px; padding:18px 14px; }
-      .today-left { justify-content:space-around; }
-      .weather-icon-main { font-size:4.5rem; }
-      .current-temp { font-size:4rem; }
-      .unit { font-size:1.6rem; }
-      .today-details { grid-template-columns:repeat(3,1fr); text-align:center; gap:8px; }
-      .detail-value { font-size:1.5rem; }
-      
-      /* 卡片尺寸缩小 */
-      .city-card { padding:12px 12px; min-width:100px; }
-      .city-card-icon { font-size:1.8rem; }
-      .hourly-item { padding:10px 6px; min-width:65px; }
-      .hourly-icon { font-size:1.8rem; }
-      .daily-card { padding:12px 4px; }
-      
-      .time-card { padding:18px 10px; }
-      #currentTime { font-size:2.8rem; }
-      #currentDate { font-size:1rem; }
-      .greeting { font-size:1.3rem; }
-      
-      .launch-btn { padding:16px; gap:14px; }
-      .launch-btn i { font-size:2rem; width:36px; }
-      .launch-btn span { font-size:1.1rem; }
+    /* ---------- 移动端强制样式 (通过JS添加类 .is-mobile) ---------- */
+    body.is-mobile {
+      padding:6px;
     }
-
-    /* 超小屏进一步压榨 */
+    body.is-mobile .dashboard {
+      grid-template-columns:1fr !important;
+      gap:12px !important;
+    }
+    body.is-mobile .sidebar {
+      order:-1 !important;
+    }
+    body.is-mobile .glass-panel {
+      border-radius: 24px !important;
+      padding: 14px 12px !important;
+    }
+    body.is-mobile .top-bar {
+      flex-direction:column !important;
+      align-items:stretch !important;
+      gap:6px !important;
+      border-radius: 32px !important;
+      padding:10px 12px !important;
+    }
+    body.is-mobile .city-info-group,
+    body.is-mobile .source-selector {
+      width:100% !important;
+      justify-content:space-between !important;
+    }
+    body.is-mobile .search-wrapper {
+      width:100% !important;
+    }
+    body.is-mobile .refresh-btn {
+      align-self:flex-end !important;
+      margin-top:-44px !important;
+    }
+    body.is-mobile .today-card {
+      flex-direction:column !important;
+      align-items:stretch !important;
+      gap:16px !important;
+      padding:18px 14px !important;
+    }
+    body.is-mobile .today-left {
+      justify-content:space-around !important;
+    }
+    body.is-mobile .weather-icon-main {
+      font-size:4.5rem !important;
+    }
+    body.is-mobile .current-temp {
+      font-size:4rem !important;
+    }
+    body.is-mobile .unit {
+      font-size:1.6rem !important;
+    }
+    body.is-mobile .today-details {
+      grid-template-columns:repeat(3,1fr) !important;
+      text-align:center !important;
+      gap:8px !important;
+    }
+    body.is-mobile .detail-value {
+      font-size:1.5rem !important;
+    }
+    body.is-mobile .city-card {
+      padding:12px 12px !important;
+      min-width:100px !important;
+    }
+    body.is-mobile .city-card-icon {
+      font-size:1.8rem !important;
+    }
+    body.is-mobile .hourly-item {
+      padding:10px 6px !important;
+      min-width:65px !important;
+    }
+    body.is-mobile .hourly-icon {
+      font-size:1.8rem !important;
+    }
+    body.is-mobile .daily-card {
+      padding:12px 4px !important;
+    }
+    body.is-mobile .time-card {
+      padding:18px 10px !important;
+    }
+    body.is-mobile #currentTime {
+      font-size:2.8rem !important;
+    }
+    body.is-mobile #currentDate {
+      font-size:1rem !important;
+    }
+    body.is-mobile .greeting {
+      font-size:1.3rem !important;
+    }
+    body.is-mobile .launch-btn {
+      padding:16px !important;
+      gap:14px !important;
+    }
+    body.is-mobile .launch-btn i {
+      font-size:2rem !important;
+      width:36px !important;
+    }
+    body.is-mobile .launch-btn span {
+      font-size:1.1rem !important;
+    }
+    /* 超小屏进一步调整 */
     @media screen and (max-width: 480px) {
-      .today-left { flex-direction:column; text-align:center; }
-      .weather-icon-main { font-size:4rem; }
-      .current-temp { font-size:3.5rem; }
-      .refresh-btn { margin-top:-48px; }
+      body.is-mobile .today-left {
+        flex-direction:column !important;
+        text-align:center !important;
+      }
+      body.is-mobile .weather-icon-main {
+        font-size:4rem !important;
+      }
+      body.is-mobile .current-temp {
+        font-size:3.5rem !important;
+      }
+      body.is-mobile .refresh-btn {
+        margin-top:-48px !important;
+      }
     }
 
     /* 背景动画 */
@@ -253,7 +323,7 @@
         <div style="margin-top:16px; opacity:0.7;"><i class="fas fa-cloud-sun"></i> 愿你拥有美好的一天</div>
       </div>
       <div class="glass-panel quick-launch">
-        <div class="launch-btn" onclick="window.open('https://iamxiaozhan.github.io/PIG')">
+        <div class="launch-btn" onclick="window.open('https://你的用户名.github.io/game-lobby/', '_blank')">
           <i class="fas fa-gamepad"></i>
           <span>游戏大厅</span>
         </div>
@@ -273,6 +343,22 @@
   <script>
     (function(){
       "use strict";
+
+      // ----- 强制移动端适配 (主动检测并添加类) -----
+      function applyMobileClass() {
+        const isMobile = window.innerWidth <= 800;
+        if (isMobile) {
+          document.body.classList.add('is-mobile');
+        } else {
+          document.body.classList.remove('is-mobile');
+        }
+      }
+      applyMobileClass();
+      window.addEventListener('resize', applyMobileClass);
+      // 每次UI更新后可能触发重绘，使用MutationObserver确保类不被移除 (但通常不会)
+      const observer = new MutationObserver(() => applyMobileClass());
+      observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+
       // 时间更新
       function updateDateTime() {
         const now = new Date();
@@ -336,6 +422,8 @@
         bodyEl.className=''; if(code<=1) bodyEl.classList.add(isDay?'theme-clear-day':'theme-clear-night'); else if(code<=3) bodyEl.classList.add('theme-cloudy'); else if([51,61,80].includes(code)) bodyEl.classList.add('theme-rainy'); else if(code===71) bodyEl.classList.add('theme-snowy'); else bodyEl.classList.add('theme-foggy');
         effectLayer.innerHTML=''; if([51,61,80].includes(code)) for(let i=0;i<60;i++){ let d=document.createElement('div'); d.className='raindrop'; d.style.left=Math.random()*100+'%'; d.style.animationDuration=(0.8+Math.random()*1.2)+'s'; effectLayer.appendChild(d); } else if(code===71) for(let i=0;i<50;i++){ let f=document.createElement('div'); f.className='snowflake'; f.style.width=f.style.height=(6+Math.random()*12)+'px'; f.style.left=Math.random()*100+'%'; effectLayer.appendChild(f); } else if(code>=2) for(let i=0;i<8;i++){ let c=document.createElement('div'); c.className='cloud'; c.style.width=(180+Math.random()*200)+'px'; c.style.height=(c.style.width.replace('px','')*0.45)+'px'; c.style.top=(5+Math.random()*40)+'%'; effectLayer.appendChild(c); } else if(isDay){ let g=document.createElement('div'); g.className='sun-glow'; g.style.top='20%'; g.style.left='70%'; effectLayer.appendChild(g); }
         starsContainer.innerHTML=(!isDay&&code<=1)?Array(60).fill().map(()=>{let s=document.createElement('div'); s.className='star'; s.style.cssText=`width:${2+Math.random()*4}px;height:${s.style.width};left:${Math.random()*100}%;top:${Math.random()*100}%`; return s;}).forEach(s=>starsContainer.appendChild(s)):'';
+        // 关键：每次主题更新后重新应用移动类，防止被覆盖
+        applyMobileClass();
       }
       function updateUI(data){
         const c=data.current, h=data.hourly, d=data.daily; const temp=Math.round(c.temperature_2m); const {iconClass,desc}=getIcon(c.weather_code,c.is_day);
@@ -346,6 +434,7 @@
         const wd=['周日','周一','周二','周三','周四','周五','周六']; dailyContainer.innerHTML = d.time.slice(1,4).map((t,i)=>{ let dt=new Date(t); let ic=getIcon(d.weather_code[i+1],true); return `<div class="daily-card"><div>${wd[dt.getDay()]}</div><div><i class="wi ${ic.iconClass}"></i></div><div>${Math.round(d.temperature_2m_max[i+1])}° ${Math.round(d.temperature_2m_min[i+1])}°</div></div>`; }).join('');
         alertText.textContent = c.weather_code>=95?'⚡雷暴':c.weather_code>=71?'❄️降雪':c.weather_code>=51?'☔降雨':'暂无预警';
         currentSourceLabel.textContent = currentDataSource==='openmeteo'?'Open-Meteo':'模拟数据';
+        applyMobileClass(); // 再次确保
       }
       async function loadWeather(lat,lon,cityName,auto){
         try{ const data = currentDataSource==='openmeteo' ? await fetchRealWeather(lat,lon) : generateMockData(lat,lon); updateCityDisplay(cityName,auto); updateUI(data); }catch(e){ alert('获取失败'); }
